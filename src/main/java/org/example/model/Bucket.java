@@ -1,8 +1,13 @@
 package org.example.model;
 
-import org.immutables.value.Value;
+public class Bucket {
+  private final String name;
 
-@Value.Immutable
-public interface Bucket {
-  String value();
+  public Bucket(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
 }

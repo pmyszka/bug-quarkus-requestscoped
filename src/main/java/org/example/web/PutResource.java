@@ -3,11 +3,10 @@ package org.example.web;
 import io.smallrye.mutiny.Uni;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.ws.rs.*;
+import java.util.Map;
 import org.example.dynamodb.BucketSettings;
 import org.example.model.Bucket;
 import org.example.service.PutService;
-
-import java.util.Map;
 
 @RequestScoped
 @Path("/settings")
@@ -29,7 +28,7 @@ public class PutResource {
 
   private BucketSettings convert(Bucket bucket, Map.Entry<String, String> entry) {
     return BucketSettings.builder()
-        .bucket(bucket.value())
+        .bucket(bucket.getName())
         .key(entry.getKey())
         .value(entry.getValue())
         .build();

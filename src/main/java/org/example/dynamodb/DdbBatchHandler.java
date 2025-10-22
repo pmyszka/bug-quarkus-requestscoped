@@ -2,12 +2,11 @@ package org.example.dynamodb;
 
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient;
 import software.amazon.awssdk.enhanced.dynamodb.MappedTableResource;
 import software.amazon.awssdk.enhanced.dynamodb.model.WriteBatch;
-
-import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class DdbBatchHandler {
 
