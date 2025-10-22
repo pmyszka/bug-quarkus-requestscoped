@@ -13,7 +13,6 @@
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.version>3.28.4</quarkus.platform.version>
     <aws.sdk.version>2.32.4</aws.sdk.version>
-    <immutables.version>2.10.1</immutables.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
