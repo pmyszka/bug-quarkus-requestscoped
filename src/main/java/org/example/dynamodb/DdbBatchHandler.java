@@ -29,16 +29,13 @@ public class DdbBatchHandler {
         .of(MAX_BATCH_SIZE)
         .onItem()
         .transformToUniAndConcatenate(this::processSubBatch)
-        .toUni()
-        .replaceWithVoid();
+        .toUni();
   }
 
   private Uni<Void> processSubBatch(List<BucketSettings> subBatch) {
-    var unprocessedItems = new AtomicReference<>(subBatch);
     return Uni.createFrom()
         .completionStage(
-            ddbClient.batchWriteItem(
-                builder -> builder.addWriteBatch(createWriteBatch(unprocessedItems.get()))))
+            ddbClient.batchWriteItem(builder -> builder.addWriteBatch(createWriteBatch(subBatch))))
         .replaceWithVoid();
   }
 
